@@ -10,7 +10,10 @@
   <!-- <input type="checkbox" value="1" name="post[category_ids][]" id="post_category_ids_1"> -->
   <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
   <%= f.fields_for :categories, post.categories.build do |categories_fields| %>
+    <!-- <input type="text" name="post[categories_attributes][0][name]"
+    id="post_categories_attributes_0_name"> -->
     <%= categories_fields.text_field :name %>
+
   <% end %>
   <%= f.submit %>
 <% end %>
